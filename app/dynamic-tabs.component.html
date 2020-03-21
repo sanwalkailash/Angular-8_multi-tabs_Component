@@ -1,12 +1,4 @@
-<div>
-	<button mat-raised-button
-          class="example-add-tab-button"
-          (click)="addTab()">
-    Add new tab
-  </button>
-</div>
-
-<mat-tab-group [selectedIndex]="selected" (selectedIndexChange)="selected = $event">
+<mat-tab-group [selectedIndex]="selectedIndex" (selectedIndexChange)="selectedIndex = $event">
 	<mat-tab *ngFor="let tab of tabs; let index = index" [label]="tab">
 		<ng-template mat-tab-label>
 			<span>{{tab}}</span>
@@ -14,6 +6,11 @@
 				cancel
 			</mat-icon>
 		</ng-template>
-		Contents for {{tab}} tab : Active tab {{selected}}
+		<div *ngIf="index==0">
+			<a mat-raised-button class="example-add-tab-button" (click)="addTab()">
+				Add Tab
+			</a>
+		</div>
+		Contents for {{tab}} tab : Active tab {{selectedIndex}}
 	</mat-tab>
 </mat-tab-group>

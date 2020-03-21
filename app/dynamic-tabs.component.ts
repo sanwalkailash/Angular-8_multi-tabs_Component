@@ -1,5 +1,6 @@
-import { Component } from "@angular/core";
+import { Component,ChangeDetectorRef } from "@angular/core";
 import { FormControl } from "@angular/forms";
+
 
 /**
  * @title Tab group with dynamically changing tabs
@@ -10,14 +11,19 @@ import { FormControl } from "@angular/forms";
   styleUrls: ["dynamic-tabs.component.css"]
 })
 export class DynamicTabsComponent {
-  tabs = ["Search", "venue details 1", "venue details 2"];
-  selected: number = 0;
+  public tabs = ["Search", "venue details 1", "venue details 2"];
+  public selectedIndex: number = 0;
+
+  constructor(private change: ChangeDetectorRef){
+
+  }
 
   addTab() {
     let tabTitle = "venue details" + this.tabs.length;
     this.tabs.push(tabTitle);
-    this.selected = this.tabs.length - 1;
-    console.info("active tad id", this.selected);
+    this.selectedIndex = this.tabs.length - 1;
+    console.info("active tad id", this.selectedIndex);
+    this.change.detectChanges();
   }
 
   removeTab(index: number) {
