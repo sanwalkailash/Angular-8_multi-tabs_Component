@@ -5,17 +5,19 @@ import { FormControl } from "@angular/forms";
  * @title Tab group with dynamically changing tabs
  */
 @Component({
-  selector: "tab-group-dynamic-example",
-  templateUrl: "tab-group-dynamic-example.html",
-  styleUrls: ["tab-group-dynamic-example.css"]
+  selector: "dynamic-tabs",
+  templateUrl: "dynamic-tabs.component.html",
+  styleUrls: ["dynamic-tabs.component.css"]
 })
-export class TabGroupDynamicExample {
+export class DynamicTabsComponent {
   tabs = ["Search", "venue details 1", "venue details 2"];
-  selected = new FormControl(0);
+  selected: number = 0;
 
-  addTab(selectAfterAdding: boolean) {
-    this.tabs.push("New");
-    this.selected.setValue(this.tabs.length);
+  addTab() {
+    let tabTitle = "venue details" + this.tabs.length;
+    this.tabs.push(tabTitle);
+    this.selected = this.tabs.length - 1;
+    console.info("active tad id", this.selected);
   }
 
   removeTab(index: number) {

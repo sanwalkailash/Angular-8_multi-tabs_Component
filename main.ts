@@ -45,7 +45,7 @@ import {
 import {BrowserModule} from '@angular/platform-browser';
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {TabGroupDynamicExample} from './app/tab-group-dynamic-example';
+import {DynamicTabsComponent} from './app/dynamic-tabs.component';
 
 @NgModule({
   exports: [
@@ -100,9 +100,9 @@ export class DemoMaterialModule {}
     MatNativeDateModule,
     ReactiveFormsModule,
   ],
-  entryComponents: [TabGroupDynamicExample],
-  declarations: [TabGroupDynamicExample],
-  bootstrap: [TabGroupDynamicExample],
+  entryComponents: [DynamicTabsComponent],
+  declarations: [DynamicTabsComponent],
+  bootstrap: [DynamicTabsComponent],
   providers: []
 })
 export class AppModule {}
