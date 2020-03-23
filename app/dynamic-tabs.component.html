@@ -1,5 +1,5 @@
-<section *ngIf="loading" class="example-section">
-	<mat-progress-bar class="example-margin" [color]="color" [mode]="mode" [value]="value" [bufferValue]="bufferValue">
+<section *ngIf="componentJson.loading" class="example-section">
+	<mat-progress-bar class="example-margin" color="primary" mode="indeterminate" value="50" bufferValue="75">
 	</mat-progress-bar>
 </section>
 <mat-tab-group [(selectedIndex)]="selectedIndex">

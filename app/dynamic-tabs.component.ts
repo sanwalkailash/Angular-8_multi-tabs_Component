@@ -1,7 +1,11 @@
 import { Component, ChangeDetectorRef } from "@angular/core";
 import { FormControl } from "@angular/forms";
-import { ThemePalette } from "@angular/material/core";
 
+declare interface DynamicTabsComponentProperties {
+  tabs: string[];
+  selectedIndex: number;
+  loading: boolean;
+}
 /**
  * @title Tab group with dynamically changing tabs
  */
@@ -13,23 +17,23 @@ import { ThemePalette } from "@angular/material/core";
 export class DynamicTabsComponent {
   public tabs = ["Search"];
   public selectedIndex: number = 0;
-  color: ThemePalette = "primary";
-  mode = "indeterminate";
-  value = 50;
-  bufferValue = 75;
-  loading: boolean = false;
+  public componentJson: DynamicTabsComponentProperties = {
+    tabs: ["Search"],
+    selectedIndex: 0,
+    loading: false
+  };
 
   constructor(private change: ChangeDetectorRef) {}
 
   addTab() {
-    this.loading = true;
+    this.componentJson.loading = true;
     let tabTitle = "venueID-" + this.tabs.length;
     this.tabs.push(tabTitle);
     this.selectedIndex = this.tabs.length - 1;
     console.info("active tad id", this.selectedIndex);
     this.change.detectChanges();
     setTimeout(() => {
-      this.loading = false;
+      this.componentJson.loading = false;
     }, 1000);
   }
 
