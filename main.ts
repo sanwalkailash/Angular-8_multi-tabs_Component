@@ -35,7 +35,6 @@ export class DemoMaterialModule {}
     FormsModule,
     HttpClientModule,
     DemoMaterialModule,
-    MatNativeDateModule,
     ReactiveFormsModule
   ],
   entryComponents: [DynamicTabsComponent],
