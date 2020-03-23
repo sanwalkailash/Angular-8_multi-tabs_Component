@@ -15,8 +15,6 @@ declare interface DynamicTabsComponentProperties {
   styleUrls: ["dynamic-tabs.component.css"]
 })
 export class DynamicTabsComponent {
-  public tabs = ["Search"];
-  public selectedIndex: number = 0;
   public componentJson: DynamicTabsComponentProperties = {
     tabs: ["Search"],
     selectedIndex: 0,
@@ -27,10 +25,10 @@ export class DynamicTabsComponent {
 
   addTab() {
     this.componentJson.loading = true;
-    let tabTitle = "venueID-" + this.tabs.length;
-    this.tabs.push(tabTitle);
-    this.selectedIndex = this.tabs.length - 1;
-    console.info("active tad id", this.selectedIndex);
+    let tabTitle = "venueID-" + this.componentJson.tabs.length;
+    this.componentJson.tabs.push(tabTitle);
+    this.componentJson.selectedIndex = this.componentJson.tabs.length - 1;
+    console.info("active tad id", this.componentJson.selectedIndex);
     this.change.detectChanges();
     setTimeout(() => {
       this.componentJson.loading = false;
@@ -38,7 +36,7 @@ export class DynamicTabsComponent {
   }
 
   removeTab(index: number) {
-    this.tabs.splice(index, 1);
+    this.componentJson.tabs.splice(index, 1);
   }
 }
 

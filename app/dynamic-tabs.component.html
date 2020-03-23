@@ -2,8 +2,8 @@
 	<mat-progress-bar class="example-margin" color="primary" mode="indeterminate" value="50" bufferValue="75">
 	</mat-progress-bar>
 </section>
-<mat-tab-group [(selectedIndex)]="selectedIndex">
-	<mat-tab *ngFor="let tab of tabs; let index = index" [label]="tab">
+<mat-tab-group [(selectedIndex)]="componentJson.selectedIndex">
+	<mat-tab *ngFor="let tab of componentJson.tabs; let index = index" [label]="tab">
 		<ng-template mat-tab-label>
 			<span>{{tab}}</span>
 			<mat-icon (click)="removeTab(index)" *ngIf="index > 0">
