@@ -1,10 +1,10 @@
-import './polyfills';
+import "./polyfills";
 
-import {CdkTableModule} from '@angular/cdk/table';
-import {CdkTreeModule} from '@angular/cdk/tree';
-import {HttpClientModule} from '@angular/common/http';
-import {NgModule} from '@angular/core';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { CdkTableModule } from "@angular/cdk/table";
+import { CdkTreeModule } from "@angular/cdk/tree";
+import { HttpClientModule } from "@angular/common/http";
+import { NgModule } from "@angular/core";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import {
   MatAutocompleteModule,
   MatBadgeModule,
@@ -40,52 +40,20 @@ import {
   MatTabsModule,
   MatToolbarModule,
   MatTooltipModule,
-  MatTreeModule,
-} from '@angular/material';
-import {BrowserModule} from '@angular/platform-browser';
-import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {DynamicTabsComponent} from './app/dynamic-tabs.component';
+  MatTreeModule
+} from "@angular/material";
+import { BrowserModule } from "@angular/platform-browser";
+import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { DynamicTabsComponent } from "./app/dynamic-tabs.component";
 
 @NgModule({
   exports: [
-    CdkTableModule,
-    CdkTreeModule,
-    MatAutocompleteModule,
-    MatBadgeModule,
-    MatBottomSheetModule,
     MatButtonModule,
-    MatButtonToggleModule,
-    MatCardModule,
-    MatCheckboxModule,
-    MatChipsModule,
-    MatStepperModule,
-    MatDatepickerModule,
-    MatDialogModule,
-    MatDividerModule,
-    MatExpansionModule,
-    MatGridListModule,
     MatIconModule,
-    MatInputModule,
-    MatListModule,
-    MatMenuModule,
-    MatNativeDateModule,
-    MatPaginatorModule,
     MatProgressBarModule,
-    MatProgressSpinnerModule,
-    MatRadioModule,
     MatRippleModule,
-    MatSelectModule,
-    MatSidenavModule,
-    MatSliderModule,
-    MatSlideToggleModule,
-    MatSnackBarModule,
-    MatSortModule,
-    MatTableModule,
-    MatTabsModule,
-    MatToolbarModule,
-    MatTooltipModule,
-    MatTreeModule,
+    MatTabsModule
   ]
 })
 export class DemoMaterialModule {}
@@ -98,7 +66,7 @@ export class DemoMaterialModule {}
     HttpClientModule,
     DemoMaterialModule,
     MatNativeDateModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule
   ],
   entryComponents: [DynamicTabsComponent],
   declarations: [DynamicTabsComponent],
@@ -108,7 +76,6 @@ export class DemoMaterialModule {}
 export class AppModule {}
 
 platformBrowserDynamic().bootstrapModule(AppModule);
-
 
 /**  Copyright 2018 Google Inc. All Rights Reserved.
     Use of this source code is governed by an MIT-style license that
